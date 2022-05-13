@@ -1,0 +1,23 @@
+-- Staging Table (Loaded from file)
+BEGIN TRY
+	DROP TABLE [dbo].[STG_MOA_DATA]
+END TRY
+
+BEGIN CATCH
+	-- Nothing
+END CATCH
+
+CREATE TABLE [dbo].[STG_MOA_DATA] (
+	dunsNum BIGINT,
+	dunsName NVARCHAR(255),
+	county NVARCHAR(50),
+	streetAddress NVARCHAR(255),
+	city NVARCHAR(50),
+	STATE NVARCHAR(50),
+	zip NVARCHAR(10),
+	phone NVARCHAR(15),
+	executiveContact1 NVARCHAR(255),
+	executiveContact2 NVARCHAR(255),
+	isWomanOwned BIT,
+	MinorityOwnedDesc NVARCHAR(50)
+)
