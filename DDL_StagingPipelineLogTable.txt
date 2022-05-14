@@ -1,0 +1,26 @@
+BEGIN TRY
+	DROP TABLE [dbo].[ADFStagingPipeLineLog]
+END TRY
+
+BEGIN CATCH
+	-- Nothing
+END CATCH
+
+CREATE TABLE [dbo].[ADFStagingPipeLineLog]
+(
+	ADFName NVARCHAR(50),
+	PipelineName NVARCHAR(50),
+	RunID NVARCHAR(50),
+	Src NVARCHAR(50),
+	Dest NVARCHAR(50),
+	TriggerType NVARCHAR(50),
+	TriggerID NVARCHAR(50),
+	TriggerTime NVARCHAR(50),
+	RowsCopied NVARCHAR(50),
+	RowsRead NVARCHAR(50),
+	CopyTimeSeconds INT,
+	SourceType NVARCHAR(50),
+	DestType NVARCHAR(50),
+	ExecutionStatus NVARCHAR(50),
+	LogCreatedUTCDate DATETIME DEFAULT GETUTCDATE()
+)

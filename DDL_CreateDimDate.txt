@@ -1,12 +1,12 @@
 --DWH Date Dimension - DDL
 BEGIN TRY
-	DROP TABLE [dbo].[DimDate]
+	DROP TABLE [edw].[DimDate]
 END TRY
 BEGIN CATCH
 	/*No Action*/
 END CATCH
 
-CREATE TABLE [dbo].[DimDate]
+CREATE TABLE [edw].[DimDate]
 	(	
 		[DateKey] INT primary key, 
 		[Date] DATETIME,

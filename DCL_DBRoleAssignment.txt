@@ -1,0 +1,7 @@
+CREATE USER [imnehaaa.11@wfhackathon2022.onmicrosoft.com] FROM EXTERNAL PROVIDER;
+
+ALTER ROLE db_datareader ADD MEMBER [imnehaaa.11@wfhackathon2022.onmicrosoft.com]; 
+ALTER ROLE db_datawriter ADD MEMBER [imnehaaa.11@wfhackathon2022.onmicrosoft.com]; 
+ALTER ROLE db_ddladmin ADD MEMBER [imnehaaa.11@wfhackathon2022.onmicrosoft.com];
+
+GRANT VIEW DATABASE STATE TO [imnehaaa.11@wfhackathon2022.onmicrosoft.com];

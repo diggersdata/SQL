@@ -63,7 +63,7 @@ SELECT
 	FROM @DayOfWeek
 	WHERE DOW = DATEPART(DW, @CurrentDate)
 
-INSERT INTO [dbo].[DimDate]
+INSERT INTO [edw].[DimDate]
 	SELECT		
 		CONVERT (char(8),@CurrentDate,112) as [DateKey],
 		@CurrentDate AS [Date],
