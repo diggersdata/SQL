@@ -25,7 +25,7 @@ LEFT JOIN [edw].[Dim_Ethnicity] as DE
 	On DE.Country_name=LTRIM(RTRIM(DC.Customer_Origin_Country))
 LEFT JOIN [edw].[Dim_Diversity_Config] DDC
 	ON 
-	(CASE WHEN DE.Country_Name not in ('United States', 'United States of America') and DE.Ethnicity_Name is not null Then 'Minority' END 
+	(CASE WHEN DE.Ethnicity_Name not in ('American') and DE.Ethnicity_Name is not null Then 'Minority' END 
 							= DDC.Diversity_Name
 							OR
 	case when DC.Gender='Female' then 'Woman' else DC.Gender end  = DDC.Diversity_Name)
@@ -48,7 +48,7 @@ Select distinct
 	,DE.Ethnicity_Key
 	,DCus.Customer_key
 	,CASE When DCus.Gender in ('Woman','Female') Then 1 else 0 end
-	,CASE When DE.Country_Name Not in ('United States', 'United States of America') and DE.Ethnicity_Name is not null Then 1 else 0 end
+	,CASE When DE.Ethnicity_Name Not in ('American') and DE.Ethnicity_Name is not null Then 1 else 0 end
 	,CDS.Diversity_Score
 	,case when DCus.Customer_Type ='Owner' then 1 else 0 end
 from dbo.STG_DiversityInformation SDI
